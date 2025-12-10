@@ -13,12 +13,16 @@ function convertTemp() {
     resultEl.textContent = `Please enter a valid number!`;
     return;
   }
-  if (from === "select" || to === "select") {
+  if (!from || from === "select" || !to || to === "select") {
     resultEl.textContent = "Please select both units!";
     return;
   }
   if (from === to) {
-    resultEl.textContent = `${inputValue}° ${from} is already ${inputValue}° ${to}! 😄`;
+    resultEl.textContent = `${inputValue}° ${
+      from.charAt(0).toUpperCase() + from.slice(1)
+    } is already ${inputValue}° ${
+      to.charAt(0).toUpperCase() + to.slice(1)
+    }! 😊`;
     return;
   }
   let celsius;
