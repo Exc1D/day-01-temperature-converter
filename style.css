@@ -4,6 +4,7 @@
   --accent-color: #00d36a;
   --cool-color: #00a9d3;
   --warm-color: #ff6a00;
+  --hot-color: #ff0000;
   --neutral-color: #00d36a;
 
   --background-color: #d0d0d0;
@@ -95,6 +96,13 @@ h1 {
   background-color: var(--accent-color);
   color: var(--secondary-color);
   cursor: pointer;
+  transition: box-shadow 0.2s ease-in-out, border 0.2s ease-in-out;
+}
+.half-box:hover {
+  box-shadow: 2px 2px 6px var(--primary-color);
+}
+.half-box.clicked {
+  border: 0.5px solid var(--text-color);
 }
 
 #resetBtn {
@@ -103,4 +111,5 @@ h1 {
 }
 h3 {
   font-size: var(--font-s);
+  text-align: center;
 }

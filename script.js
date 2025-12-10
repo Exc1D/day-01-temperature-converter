@@ -59,43 +59,16 @@ function convertTemp() {
       return;
   }
 
-  if (celsius <= 18) {
-    document.documentElement.style.setProperty(
-      "--accent-color",
-      "var(--cool-color)"
-    );
+  const setTheme = (color) => {
+    document.documentElement.style.setProperty("--accent-color", color);
     document.documentElement.style.setProperty(
       "--background-accent-color",
-      "var(--cool-color)"
+      color
     );
-  } else if (celsius >= 30 && celsius <= 39) {
-    document.documentElement.style.setProperty(
-      "--accent-color",
-      "var(--warm-color)"
-    );
-    document.documentElement.style.setProperty(
-      "--background-accent-color",
-      "var(--warm-color)"
-    );
-  } else if (celsius >= 40) {
-    document.documentElement.style.setProperty(
-      "--accent-color",
-      "var(--hot-color)"
-    );
-    document.documentElement.style.setProperty(
-      "--background-accent-color",
-      "var(--hot-color)"
-    );
-  } else {
-    document.documentElement.style.setProperty(
-      "--accent-color",
-      "var(--neutral-color)"
-    );
-    document.documentElement.style.setProperty(
-      "--background-accent-color",
-      "var(--neutral-color)"
-    );
-  }
+  };
+  if (celsius <= 18) setTheme("var(--cool-color)");
+  else if (celsius >= 30) setTheme("var(--warm-color)");
+  else setTheme("var(--neutral-color)");
 
   resultEl.textContent = `${inputValue}° ${
     from.charAt(0).toUpperCase() + from.slice(1)
