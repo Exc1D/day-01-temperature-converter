@@ -67,7 +67,8 @@ function convertTemp() {
     );
   };
   if (celsius <= 18) setTheme("var(--cool-color)");
-  else if (celsius >= 30) setTheme("var(--warm-color)");
+  else if (celsius >= 30 && celsius <= 39) setTheme("var(--warm-color)");
+  else if (celsius >= 40) setTheme("var(--hot-color)");
   else setTheme("var(--neutral-color)");
 
   resultEl.textContent = `${inputValue}° ${
