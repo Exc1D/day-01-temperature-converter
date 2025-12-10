@@ -47,18 +47,19 @@ A dynamic temperature conversion tool that changes theme based on the temperatur
 ## 📸 Screenshots
 🟢 Green theme for comfortable (11-29°C)
 
-![Neutral color](https://imgur.com/uz4gKbG)
+![Neutral color](https://i.imgur.com/uz4gKbG.png)
 
 🔵 Blue theme for cold (≤10°C)
 
-![Cool theme](https://imgur.com/uBxCIro)
+![Cool theme](https://i.imgur.com/uBxCIro.png)
 
 🟠 Orange theme for warm (30-39°C)
 
-![Warm theme](https://imgur.com/jgFjhCh)
+![Warm theme](https://i.imgur.com/jgFjhCh.png)
 
 🔴 Red theme for hot (>40°C)
-![Hot theme](https://imgur.com/BtnLKBX)
+
+![Hot theme](https://i.imgur.com/BtnLKBX.png)
 
 ## 🎯 Conversion Formulas
 
