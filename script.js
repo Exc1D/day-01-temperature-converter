@@ -48,7 +48,7 @@ function convertTemp() {
       return;
   }
 
-  if (celsius <= 10) {
+  if (celsius <= 18) {
     document.documentElement.style.setProperty(
       "--accent-color",
       "var(--cool-color)"
