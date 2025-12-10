@@ -10,7 +10,8 @@ A dynamic temperature conversion tool that changes theme based on the temperatur
 - 🌡️ **Dynamic theming** - App changes colors based on temperature:
   - 🔵 Blue theme for cold (≤10°C)
   - 🟢 Green theme for comfortable (11-29°C)
-  - 🔴 Orange theme for hot (≥30°C)
+  - 🟠 Orange theme for warm (30-39°C)
+  - 🔴 Red theme for hot (>40°C)
 - ✨ Input validation with error messages
 - 🔄 Reset button to clear all fields
 - 📱 Fully responsive design
@@ -30,6 +31,7 @@ A dynamic temperature conversion tool that changes theme based on the temperatur
 - Input validation and error handling
 - Converting between multiple temperature scales using Celsius as intermediate format
 - Case sensitivity in JavaScript (learned the hard way with `.Value` vs `.value`!)
+- Adding floating label effects
 
 ## 🐛 Bugs I Squashed
 
@@ -40,11 +42,23 @@ A dynamic temperature conversion tool that changes theme based on the temperatur
 
 ## 🚀 Live Demo
 
-[View Live Project](https://yourusername.github.io/day-01-temperature-converter)
+[View Live Project](https://exc1d.github.io/day-01-temperature-converter/)
 
 ## 📸 Screenshots
+🟢 Green theme for comfortable (11-29°C)
 
-[Add screenshots here after deployment]
+![Neutral color](https://imgur.com/uz4gKbG)
+
+🔵 Blue theme for cold (≤10°C)
+
+![Cool theme](https://imgur.com/uBxCIro)
+
+🟠 Orange theme for warm (30-39°C)
+
+![Warm theme](https://imgur.com/jgFjhCh)
+
+🔴 Red theme for hot (>40°C)
+![Hot theme](https://imgur.com/BtnLKBX)
 
 ## 🎯 Conversion Formulas
 
