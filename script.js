@@ -3,6 +3,7 @@ const fromUnit = document.getElementById("fromUnit");
 const toUnit = document.getElementById("toUnit");
 const resetBtn = document.getElementById("resetBtn");
 const resultEl = document.getElementById("result");
+const convertBtn = document.getElementById("convertBtn");
 
 function convertTemp() {
   const inputValue = parseFloat(input.value);
@@ -20,11 +21,10 @@ function convertTemp() {
   if (from === to) {
     resultEl.textContent = `${inputValue}° ${
       from.charAt(0).toUpperCase() + from.slice(1)
-    } is already ${inputValue}° ${
-      to.charAt(0).toUpperCase() + to.slice(1)
-    }! 😊`;
+    } is already ${inputValue}° ${to.charAt(0).toUpperCase() + to.slice(1)} 😊`;
     return;
   }
+
   let celsius;
 
   switch (from) {
@@ -102,7 +102,7 @@ function convertTemp() {
   } = ${result.toFixed(2)}° ${to.charAt(0).toUpperCase() + to.slice(1)}`;
 }
 
-resetBtn.addEventListener("click", () => {
+function resetForm() {
   input.value = "";
   resultEl.textContent = "";
 
@@ -117,4 +117,19 @@ resetBtn.addEventListener("click", () => {
     "--background-accent-color",
     "#ffffff"
   );
+}
+
+function buttonClickEffect(button) {
+  button.classList.add("clicked");
+  setTimeout(() => button.classList.remove("clicked"), 150);
+}
+
+convertBtn.addEventListener("click", () => {
+  buttonClickEffect(convertBtn);
+  convertTemp();
+});
+
+resetBtn.addEventListener("click", () => {
+  buttonClickEffect(resetBtn);
+  resetForm();
 });
