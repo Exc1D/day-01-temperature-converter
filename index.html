@@ -9,7 +9,20 @@
   <body>
     <form>
       <h1>Temperature Converter</h1>
-      <select></select>
+      <input type="number" id="input" class="box" />
+      <select class="box">
+        <option value="Celsius" id="fromCelsius">Celsius (°C)</option>
+        <option value="Fahrenheit" id="fromFahrenheit">Fahrenheit (°F)</option>
+        <option value="Kelvin" id="fromKelvin">Kelvin (K)</option>
+      </select>
+      <p>to</p>
+      <select class="box">
+        <option value="Celsius" id="fromCelsius">Celsius (°C)</option>
+        <option value="Fahrenheit" id="fromFahrenheit">Fahrenheit (°F)</option>
+        <option value="Kelvin" id="fromKelvin">Kelvin (K)</option>
+      </select>
+      <button type="submit" class="box">Convert</button>
+      <div id="result">Select a Unit</div>
     </form>
     <script src="script.js"></script>
   </body>
