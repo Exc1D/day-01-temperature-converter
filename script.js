@@ -95,6 +95,6 @@ resetBtn.addEventListener("click", () => {
   );
   document.documentElement.style.setProperty(
     "--background-accent-color",
-    "var(--background-accent-color)"
+    "#ffffff"
   );
 });
