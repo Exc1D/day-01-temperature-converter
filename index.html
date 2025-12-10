@@ -8,21 +8,27 @@
   </head>
   <body>
     <form>
-      <h1>Temperature Converter</h1>
-      <input type="number" id="input" class="box" />
-      <select class="box">
-        <option value="Celsius" id="fromCelsius">Celsius (°C)</option>
-        <option value="Fahrenheit" id="fromFahrenheit">Fahrenheit (°F)</option>
-        <option value="Kelvin" id="fromKelvin">Kelvin (K)</option>
-      </select>
-      <p>to</p>
-      <select class="box">
-        <option value="Celsius" id="fromCelsius">Celsius (°C)</option>
-        <option value="Fahrenheit" id="fromFahrenheit">Fahrenheit (°F)</option>
-        <option value="Kelvin" id="fromKelvin">Kelvin (K)</option>
-      </select>
-      <button type="submit" class="box">Convert</button>
-      <div id="result">Select a Unit</div>
+      <header>
+        <h1>Temperature Converter</h1>
+      </header>
+      <main>
+        <input type="number" id="input" class="box" />
+        <select class="box" id="fromUnit">
+          <option value="celsius">Celsius (°C)</option>
+          <option value="fahrenheit">Fahrenheit (°F)</option>
+          <option value="kelvin">Kelvin (K)</option>
+        </select>
+        <p>to</p>
+        <select class="box" id="toUnit">
+          <option value="celsius">Celsius (°C)</option>
+          <option value="fahrenheit">Fahrenheit (°F)</option>
+          <option value="kelvin">Kelvin (K)</option>
+        </select>
+        <button type="submit" class="box" onclick="convertTemp()">
+          Convert
+        </button>
+        <h3 id="result"></h3>
+      </main>
     </form>
     <script src="script.js"></script>
   </body>
