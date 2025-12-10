@@ -1,28 +1,39 @@
 const input = document.getElementById("input");
 const fromUnit = document.getElementById("fromUnit");
 const toUnit = document.getElementById("toUnit");
-// const result = document.getElementById("result");
+const resetBtn = document.getElementById("resetBtn");
+const resultEl = document.getElementById("result");
 
 function convertTemp() {
-  if (input < 0) {
-    result.textContent = `Please enter a valid number!`;
+  const inputValue = parseFloat(input.value);
+  const from = fromUnit.value;
+  const to = toUnit.value;
+
+  if (isNaN(inputValue)) {
+    resultEl.textContent = `Please enter a valid number!`;
+    return;
   }
 
   let celsius;
-  switch (fromUnit) {
+
+  switch (from) {
     case "celsius":
-      celsius = input;
+      celsius = inputValue;
       break;
     case "fahrenheit":
-      celsius = ((input - 32) * 5) / 9;
+      celsius = ((inputValue - 32) * 5) / 9;
       break;
     case "kelvin":
-      celsius = input - 273.15;
+      celsius = inputValue - 273.15;
       break;
+    default:
+      resultEl.textContent = `Invalid unit selected!`;
+      return;
   }
 
   let result;
-  switch (toUnit) {
+
+  switch (to) {
     case "celsius":
       result = celsius;
       break;
@@ -32,7 +43,58 @@ function convertTemp() {
     case "kelvin":
       result = celsius + 273.15;
       break;
+    default:
+      resultEl.textContent = `Invalid unit selected!`;
+      return;
   }
-  document.getElementById("result").textContent = `${input}° ${fromUnit.charAt(0).toUpperCase()}` 
-  = `${result}° ${toUnit.charAt(0).toUpperCase()}`;
+
+  if (celsius <= 10) {
+    document.documentElement.style.setProperty(
+      "--accent-color",
+      "var(--cool-color)"
+    );
+    document.documentElement.style.setProperty(
+      "--background-accent-color",
+      "var(--cool-color)"
+    );
+  } else if (celsius >= 30) {
+    document.documentElement.style.setProperty(
+      "--accent-color",
+      "var(--warm-color)"
+    );
+    document.documentElement.style.setProperty(
+      "--background-accent-color",
+      "var(--warm-color)"
+    );
+  } else {
+    document.documentElement.style.setProperty(
+      "--accent-color",
+      "var(--neutral-color)"
+    );
+    document.documentElement.style.setProperty(
+      "--background-accent-color",
+      "var(--neutral-color)"
+    );
+  }
+
+  resultEl.textContent = `${inputValue}° ${
+    from.charAt(0).toUpperCase() + from.slice(1)
+  } = ${result.toFixed(2)}° ${to.charAt(0).toUpperCase() + to.slice(1)}`;
 }
+
+resetBtn.addEventListener("click", () => {
+  input.value = "";
+  resultEl.textContent = "";
+
+  fromUnit.value = "select";
+  toUnit.value = "select";
+
+  document.documentElement.style.setProperty(
+    "--accent-color",
+    "var(--neutral-color)"
+  );
+  document.documentElement.style.setProperty(
+    "--background-accent-color",
+    "var(--background-accent-color)"
+  );
+});

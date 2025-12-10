@@ -1,17 +1,22 @@
 :root {
   --primary-color: #000;
   --secondary-color: #fff;
-  --accent-color: #00a9d3;
+  --accent-color: #00d36a;
+  --cool-color: #00a9d3;
+  --warm-color: #ff6a00;
+  --neutral-color: #00d36a;
+
   --background-color: #d0d0d0;
+  --background-accent-color: #ffffff;
   --text-color: #333;
 
   --main-font: "Open Sans", sans-serif;
   --secondary-font: "Montserrat", sans-serif;
 
-  --font-s: 0.875rem;
-  --font-m: 1rem;
+  --font-s: clamp(0.9rem, 3vw, 1.2rem);
+  --font-m: clamp(1rem, 3vw, 1.5rem);
   --font-l: 1.5rem;
-  --font-xl: 2rem;
+  --font-xl: clamp(1.5rem, 5vw, 2.2rem);
 }
 
 *,
@@ -21,18 +26,25 @@
 }
 
 body {
-  background-color: var(--background-color);
+  background: radial-gradient(
+    circle,
+    var(--background-color) 50%,
+    var(--background-accent-color) 100%
+  );
+  transition: background 0.6s ease;
   font-family: var(--secondary-font);
   font-size: var(--font-s);
   display: flex;
   justify-content: center;
+  padding: 1rem;
 }
 
 form {
-  max-width: 18.75rem;
+  max-width: 22rem;
   background-color: var(--secondary-color);
   border-radius: 1rem;
   box-shadow: 1.5rem 1.5rem 1.5rem rgba(0, 0, 0, 0.25);
+  margin: 1rem;
 }
 
 main {
@@ -44,10 +56,15 @@ main {
   padding: 1.5rem 0;
 }
 
+input,
+select {
+  text-align: center;
+}
+
 header {
   background: var(--accent-color);
   border-radius: 1rem 1rem 0 0;
-  padding: 1.65rem 0;
+  padding: 1.65rem 1rem;
   text-align: center;
 }
 
@@ -58,20 +75,32 @@ h1 {
   color: var(--secondary-color);
 }
 
-.box {
+.box,
+.half-box {
+  background-color: var(--secondary-color);
   width: 75%;
   padding: 0.5rem;
   border: 1px solid var(--text-color);
   border-radius: 0.5rem;
 }
-
-button {
+.buttonContainer {
+  display: flex;
+  justify-content: space-between;
+  width: 75%;
+}
+.half-box {
+  width: 48%;
   padding: 0.5rem;
   border: var(--accent-color);
   background-color: var(--accent-color);
   color: var(--secondary-color);
   cursor: pointer;
 }
+
+#resetBtn {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
 h3 {
-  font-size: var(--font-xl);
+  font-size: var(--font-s);
 }

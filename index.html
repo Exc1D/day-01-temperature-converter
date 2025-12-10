@@ -14,19 +14,24 @@
       <main>
         <input type="number" id="input" class="box" />
         <select class="box" id="fromUnit">
+          <option selected value="select">--Select Unit--</option>
           <option value="celsius">Celsius (°C)</option>
           <option value="fahrenheit">Fahrenheit (°F)</option>
           <option value="kelvin">Kelvin (K)</option>
         </select>
         <p>to</p>
         <select class="box" id="toUnit">
+          <option selected value="select">--Select Unit--</option>
           <option value="celsius">Celsius (°C)</option>
           <option value="fahrenheit">Fahrenheit (°F)</option>
           <option value="kelvin">Kelvin (K)</option>
         </select>
-        <button type="submit" class="box" onclick="convertTemp()">
-          Convert
-        </button>
+        <section class="buttonContainer">
+          <button type="button" class="half-box" onclick="convertTemp()">
+            Convert
+          </button>
+          <button type="button" class="half-box" id="resetBtn">Reset</button>
+        </section>
         <h3 id="result"></h3>
       </main>
     </form>
