@@ -13,7 +13,14 @@ function convertTemp() {
     resultEl.textContent = `Please enter a valid number!`;
     return;
   }
-
+  if (from === "select" || to === "select") {
+    resultEl.textContent = "Please select both units!";
+    return;
+  }
+  if (from === to) {
+    resultEl.textContent = `${inputValue}° ${from} is already ${inputValue}° ${to}! 😄`;
+    return;
+  }
   let celsius;
 
   switch (from) {
@@ -57,7 +64,7 @@ function convertTemp() {
       "--background-accent-color",
       "var(--cool-color)"
     );
-  } else if (celsius >= 30) {
+  } else if (celsius >= 30 && celsius <= 39) {
     document.documentElement.style.setProperty(
       "--accent-color",
       "var(--warm-color)"
@@ -65,6 +72,15 @@ function convertTemp() {
     document.documentElement.style.setProperty(
       "--background-accent-color",
       "var(--warm-color)"
+    );
+  } else if (celsius >= 40) {
+    document.documentElement.style.setProperty(
+      "--accent-color",
+      "var(--hot-color)"
+    );
+    document.documentElement.style.setProperty(
+      "--background-accent-color",
+      "var(--hot-color)"
     );
   } else {
     document.documentElement.style.setProperty(
